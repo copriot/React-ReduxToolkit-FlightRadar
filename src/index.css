@@ -88,6 +88,25 @@ header {
     color: #ffffff;
   }
 }
+/* buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  a:first-child button {
+    border-radius: 6px 0 0 6px;
+  }
+  a:last-child button {
+    border-radius: 0 6px 6px 0;
+  }
+  .active button {
+    background-color: #535bf2;
+  }
+}
+/* Map */
+.leaflet-container {
+  height: 100vh;
+}
 
 @media (max-width: 600px) {
   header h2 {
