@@ -20,8 +20,11 @@ export const getFlights = createAsyncThunk(
       id: item[0],
       code: item[1],
       lat: item[2],
-      lng: [3],
+      lng: item[3],
     }));
-    console.log(formatted);
+    //  console.log(formatted);
+
+    //aksiyonun payloadını belirler
+    return formatted;
   }
 );
