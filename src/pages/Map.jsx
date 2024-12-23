@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useSelector } from "react-redux";
 import { icon } from "leaflet";
-const Map = () => {
+const Map = ({ setDetailId }) => {
   const { isLoading, error, flights } = useSelector((store) => store.flight);
 
   //marker için icon olusturma
@@ -23,7 +23,7 @@ const Map = () => {
           <Popup>
             <div className="popup">
               <span>Kod: {flight.code}</span>
-              <button>Detay</button>
+              <button onClick={() => setDetailId(flight.id)}>Detay</button>
             </div>
           </Popup>
         </Marker>

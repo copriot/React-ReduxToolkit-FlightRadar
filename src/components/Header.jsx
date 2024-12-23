@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const { flights, isLoading, error } = useSelector((store) => store.flight);
-  console.log(flights);
+  // console.log(flights);
   return (
     <header>
       <Link to={"/"}>
