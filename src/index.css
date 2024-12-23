@@ -105,7 +105,8 @@ header {
 }
 /* Map */
 .leaflet-container {
-  height: 100vh;
+  height: calc(100vh - 165px);
+  margin-top: 30px;
 }
 
 @media (max-width: 600px) {
