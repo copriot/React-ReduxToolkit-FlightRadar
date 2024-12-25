@@ -23,7 +23,7 @@ const Map = ({ setDetailId }) => {
           <Popup>
             <div className="popup">
               <span>Kod: {flight.code}</span>
-              <button onClick={() => setDetailId(flight.id)}>Detay</button>
+              <button onClick={() => setDetailId(flight?.id)}>Detay</button>
             </div>
           </Popup>
         </Marker>
