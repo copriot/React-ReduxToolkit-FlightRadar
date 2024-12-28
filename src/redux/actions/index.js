@@ -28,3 +28,11 @@ export const getFlights = createAsyncThunk(
     return formatted;
   }
 );
+
+export const getInfo = createAsyncThunk("info/getInfo", async (id) => {
+  // api'dan uçuş detaylarını al
+  const res = await api.get(`/flights/detail?flight=${id}`);
+
+  // aksiyonun payload'Inı return et
+  return res.data;
+});

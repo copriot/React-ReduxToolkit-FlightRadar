@@ -17,7 +17,7 @@ const App = () => {
     dispatch(getFlights());
   }, []);
 
-  console.log(detailId);
+  // console.log(detailId);
   return (
     <div>
       <BrowserRouter>
