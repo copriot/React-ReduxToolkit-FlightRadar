@@ -7,6 +7,9 @@ import formatDate from "../utils/formatDate";
 
 const Modal = ({ id, close }) => {
   const { isLoading, error, info } = useSelector((store) => store.info);
+
+  const isVip = !info?.aircraft.registration || !info?.airline.name;
+
   const dispatch = useDispatch();
   console.log(info);
   useEffect(() => {
@@ -22,6 +25,8 @@ const Modal = ({ id, close }) => {
           <Loader />
         ) : error ? (
           <Error message={error} />
+        ) : isVip ? (
+          <h2 className="Loader-wrapper"> Flight Information has been hidden. </h2>
         ) : (
           info && (
             <div className="info-wrapper">

@@ -25,7 +25,7 @@ const App = () => {
         <Buttons />
         <Routes>
           <Route path="/" element={<Map setDetailId={setDetailId} />} />
-          <Route path="/list" element={<List />} />
+          <Route path="/list" element={<List setDetailId={setDetailId} />} />
         </Routes>
 
         {/* detay id stateinde eleman varsa ekrana modal bas */}
