@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getInfo } from "../redux/actions";
 import Error from "./Error";
 import Loader from "./Loader";
+import formatDate from "../utils/formatDate";
 
 const Modal = ({ id, close }) => {
   const { isLoading, error, info } = useSelector((store) => store.info);
@@ -10,7 +11,7 @@ const Modal = ({ id, close }) => {
   console.log(info);
   useEffect(() => {
     dispatch(getInfo(id));
-  }, []);
+  }, [id]);
   return (
     <div className="modal-outer">
       <div className="modal-inner">
@@ -49,6 +50,19 @@ const Modal = ({ id, close }) => {
                 <a href={info.airport.destination.website} target="_blank">
                   {info.airport.destination.name}
                 </a>
+              </p>
+              <p>
+                <span>Departure Time :</span>
+                <span>{formatDate(info.time.scheduled.departure)}</span>
+                {/* UnixTimeStampten dolayı 1000 ile carpıp mili saniye cinsine cevirip ekrana basıyoruz*/}
+              </p>
+              <p>
+                <span>Arrival Time :</span>
+                <span>{formatDate(info.time.scheduled.arrival)}</span>
+              </p>
+
+              <p className={`alert ${info.status.icon}`}>
+                <span>{info.status.text}</span>
               </p>
 
               <p>Uyarı</p>

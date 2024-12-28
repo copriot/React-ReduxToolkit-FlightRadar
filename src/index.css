@@ -175,11 +175,28 @@ header {
     span:last-child {
       font-weight: bold;
       text-transform: capitalize;
-      background-color: red;
     }
   }
   h2 {
     margin: 5px 0px;
+  }
+
+  .alert {
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+  }
+  .green {
+    background-color: rgb(58, 150, 58);
+  }
+  .red {
+    background-color: rgb(225, 16, 16);
+  }
+  .yellow {
+    background-color: rgb(233, 233, 21);
   }
 }
 
