@@ -14,7 +14,7 @@ const App = () => {
   const [detailId, setDetailId] = useState(null);
   //tr sınırları içerisindeki uçuşları al ve store aktar
   useEffect(() => {
-    dispatch(getFlights());
+    setInterval(() => dispatch(getFlights()), 5000);
   }, []);
 
   // console.log(detailId);
